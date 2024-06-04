@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    font-family: "Cera PRO Regular";
+}
+
+.font-bolder {
+    font-family: "Cera Pro Bold";
+}
+
+.font-semiregular {
+    font-family: "Cera PRO Medium";
+}
+
+
+  
