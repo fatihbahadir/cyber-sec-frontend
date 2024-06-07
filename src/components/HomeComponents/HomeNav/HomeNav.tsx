@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import { RiLogoutCircleLine } from "react-icons/ri";
 import FatihImg from "../../../assets/fatih.png";
 import useLogout from '../../../hooks/useLogout';
@@ -13,7 +12,7 @@ interface HomeNavProps {
 const HomeNav = ({ user }: HomeNavProps) => {
   const logout = useLogout();
   return (
-    <div className='flex flex-col px-8 py-8'>
+    <div className='flex flex-col '>
       <div className='flex justify-between items-center'>
         <div className='flex flex-col items-start'>
           <h2 className='text-2xl text-white'>Cyber <span className='!text-fontColor opacity-60'>Dashboard</span></h2>

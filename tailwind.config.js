@@ -20,7 +20,7 @@ export default {
       addUtilities({
         '.border-r-gradient': {
           borderRight: '1px solid transparent',
-          borderImage: 'linear-gradient(to bottom, rgba(43, 84, 231, 1), rgba(255, 255, 255, 0)) 1 100%',
+          borderImage: 'linear-gradient(to bottom, rgba(43, 84, 231, 1), rgba(255, 255, 255, 0.1)) 1 100%',
         },
       })
     },
