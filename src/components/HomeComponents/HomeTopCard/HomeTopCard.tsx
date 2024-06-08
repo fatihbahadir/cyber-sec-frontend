@@ -22,7 +22,7 @@ const HomeTopCard = ({ logCount, type, Icon }: HomeTopCardProps) => {
     </div>
 
         <div className='flex flex-col items-center justify-center'>
-            <p className='text-sm opacity-70 text-fontColor font-semiregular'>{type}</p>
+            <p className='text-sm opacity-70 text-fontColor'>{type}</p>
             <h3 className='text-3xl text-fontColor opacity-100'>{logCount}</h3>
         </div>
         </div>

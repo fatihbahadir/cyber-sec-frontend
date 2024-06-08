@@ -18,8 +18,8 @@ export const SIDE_ITEMS = [
       Icon: PiMailboxFill,
     },
     {
-      name: "Settings",
-      href: "/settings",
+      name: "Edit Profile",
+      href: "/profile",
       Icon: PiGearFill,
     },
   

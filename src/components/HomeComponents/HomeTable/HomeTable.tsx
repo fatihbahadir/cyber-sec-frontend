@@ -18,7 +18,7 @@ const HomeTable = ({theads, data} : HomeTableProps) => {
     <div className="col-span-6 bg-gradient-to-tr from-[rgba(255,255,255,.1)] to-[rgba(43,84,231,1)] text-white p-[1px] rounded-2xl drop-shadow-md"> 
     <div className='rounded-2xl bg-gradient-to-tr from-[rgba(47,54,97,1)] to-[rgb(47,54,97)] text-left text-sm w-full px-4 py-4'>
     <table className='w-full'>
-        <thead className="border-b border-[rgba(0,0,0,.2)]  font-medium text-fontColor">      
+        <thead className="border-b border-[rgba(0,0,0,.2)] text-fontColor">      
             <tr>
                 {
                     theads.map((text)=>(

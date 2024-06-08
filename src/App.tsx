@@ -11,6 +11,7 @@ import Home from './views/Home/Home'
 import MainLayout from './layouts/MainLayout/MainLayout'
 import Logs from './views/Logs/Logs'
 import Emails from './views/Emails/Emails'
+import Profile from './views/Profile/Profile'
 
 const ROLES = {
   'User': 2001,
@@ -39,12 +40,18 @@ function App() {
           <Route element={<RequireAuth allowedRoles={[ROLES.Admin]}/>}>
               <Route path='/emails' element={<Emails/>} />
           </Route>
+
+          <Route element={<RequireAuth allowedRoles={[ROLES.Admin, ROLES.Editor]}/>}>
+              <Route path='/profile' element={<Profile/>} />
+          </Route>
           </Route>
         </Route>
 
       </Routes>
 
-      <ToastContainer toastStyle={{
+      <ToastContainer theme='dark' toastStyle={{
+        backgroundColor: '#2F3561',
+        color: 'white',
       }} />
     </div>
   )

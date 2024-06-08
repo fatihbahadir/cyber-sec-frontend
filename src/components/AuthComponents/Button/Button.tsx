@@ -11,7 +11,7 @@ const Button = ({ onClick, loading, text } : ButtonParams) => {
       <button
         onClick={onClick}
         disabled={loading}
-        className="w-full text-sm sm:text-base py-[6px] sm:py-2 border border-strokeBlue text-white bg-strokeBlue rounded-[35px]  hover:bg-main font-semiregular focus:outline-none transition-all disabled:opacity-50"      >
+        className="w-full text-sm sm:text-base py-[6px] sm:py-2 border border-strokeBlue text-white bg-strokeBlue rounded-[35px]  hover:bg-main focus:outline-none transition-all disabled:opacity-50"      >
         {loading ? "Loading ..." : text}
       </button>
     </div>

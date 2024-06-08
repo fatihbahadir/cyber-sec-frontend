@@ -9,7 +9,7 @@ interface IJwtPayload extends JwtPayload {
     };
 }
 
-const RequireAuth = ({ allowedRoles } : { allowedRoles: [number]}) => {
+const RequireAuth = ({ allowedRoles } : { allowedRoles: number[]}) => {
   const { auth } = useAuth();
   const location = useLocation();
 
