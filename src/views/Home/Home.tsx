@@ -25,10 +25,6 @@ const Home = () => {
   const { auth } = useAuth();
   const { logs, setLogs } = useLog();
   const { emails, setEmails } = useEmail();
-  const [user, setUser] = useState({
-    username: "",
-    roles: {},
-  });
   const [loading, setLoading] = useState(false);
   const [macLogCount, setMacLogCount] = useState(0);
   const [windowsLogCount, setWindowsLogCount] = useState(0);
@@ -75,11 +71,6 @@ const Home = () => {
 
     try {
       const requests = [
-        axios.get("/user", {
-          headers: {
-            Authorization: `Bearer ${auth.accessToken}`,
-          },
-        }),
         axios.get(`/log/device/mac/count`, {
           headers: {
             Authorization: `Bearer ${auth.accessToken}`,
@@ -119,13 +110,12 @@ const Home = () => {
 
       const responses = await Promise.all(requests);
 
-      setUser(responses[0].data.data);
-      setMacLogCount(responses[1].data.data.logCount);
-      setWindowsLogCount(responses[2].data.data.logCount);
-      setEmailSenderCount(responses[3].data.data.senderCount);
+      setMacLogCount(responses[0].data.data.logCount);
+      setWindowsLogCount(responses[1].data.data.logCount);
+      setEmailSenderCount(responses[2].data.data.senderCount);
 
-      let logIndex = 4;
-      let emailIndex = 4;
+      let logIndex = 3;
+      let emailIndex = 3;
 
       if (logs.length <= 1) {
         setLogs(responses[logIndex].data.data);
@@ -155,7 +145,7 @@ const Home = () => {
         </div>
       ) : (
         <div className="flex flex-col px-8 py-8 gap-8">
-          <HomeNav user={user} />
+          <HomeNav />
           <div className="grid grid-cols-10 w-full gap-10">
             <HomeTopCard
               logCount={logs.length}

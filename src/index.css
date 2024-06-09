@@ -73,3 +73,26 @@
      transform: translateX(0) scale(1);
     }
   }
+  
+
+
+  ::-webkit-scrollbar {
+    width: 8px;
+}
+ 
+/* Track */
+::-webkit-scrollbar-track {
+    background: #252A4C;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #2F3561;
+    border-radius: 5px;
+    height: 10px;
+}
+ 
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #2B54E7;
+}

@@ -12,6 +12,11 @@ import MainLayout from './layouts/MainLayout/MainLayout'
 import Logs from './views/Logs/Logs'
 import Emails from './views/Emails/Emails'
 import Profile from './views/Profile/Profile'
+import LogDetails from './views/Logs/LogDetails/LogDetails'
+import NotFound from './views/NotFound/NotFound'
+import Unauthorized from './views/Unauthorized/Unauthorized'
+import EmailDetailCard from './components/EmailComponents/EmailDetailCard/EmailDetailCard'
+import EmailDetails from './views/Emails/EmailDetails/EmailDetails'
 
 const ROLES = {
   'User': 2001,
@@ -32,20 +37,29 @@ function App() {
         <Route element={<PersistLogin/>}>
           <Route element={<MainLayout/>}>
           <Route element={<RequireAuth allowedRoles={[ROLES.Admin]}/>}>
-              <Route path='/' element={<Home/>} />
+              <Route path='/home' element={<Home/>} />
           </Route>
           <Route element={<RequireAuth allowedRoles={[ROLES.Admin]}/>}>
               <Route path='/logs' element={<Logs/>} />
           </Route>
           <Route element={<RequireAuth allowedRoles={[ROLES.Admin]}/>}>
+              <Route path='/logs/:id' element={<LogDetails/>} />
+          </Route>
+          <Route element={<RequireAuth allowedRoles={[ROLES.Admin]}/>}>
               <Route path='/emails' element={<Emails/>} />
           </Route>
-
+          <Route element={<RequireAuth allowedRoles={[ROLES.Admin]}/>}>
+              <Route path='/emails/:id' element={<EmailDetails/>} />
+          </Route>
           <Route element={<RequireAuth allowedRoles={[ROLES.Admin, ROLES.Editor]}/>}>
               <Route path='/profile' element={<Profile/>} />
           </Route>
           </Route>
         </Route>
+
+
+        <Route path='*' element={<NotFound/>}/>
+        <Route path='/unauthorized' element={<Unauthorized/>}/>
 
       </Routes>
 

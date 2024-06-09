@@ -4,7 +4,7 @@ import { PiGearFill, PiHouseFill, PiKeyboardFill, PiMailboxFill } from "react-ic
 export const SIDE_ITEMS = [
     {
       name: "Home",
-      href: "/",
+      href: "/home",
       Icon: PiHouseFill,
     },
     {

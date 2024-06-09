@@ -14,7 +14,7 @@ const LOGIN_URL = "/auth";
 const LoginForm = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const from = location.state?.from?.pathname || "/";
+  const from = location.state?.from?.pathname || "/home";
   const [user, resetUser, userAttribs] = useInput("user", "");
   const [pwd, setPwd] = useState("");
   const [errMsg, setErrMsg] = useState("");

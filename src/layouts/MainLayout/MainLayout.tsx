@@ -6,7 +6,7 @@ import Sidebar from '../../components/CommonComponents/Sidebar/Sidebar';
 
 const MainLayout = () => {
   return (
-    <div className='h-screen w-screen bg-main relative overflow-hidden flex'>
+    <div className='min-h-screen max-w-screen bg-main relative overflow-auto flex'>
         <div className='w-[537px] h-[537px] object-contain absolute right-44 top-3'>
             <img src={Ellipse} className='w-full h-full '/>
         </div>

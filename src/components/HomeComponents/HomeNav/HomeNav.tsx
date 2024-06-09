@@ -1,16 +1,34 @@
 import { RiLogoutCircleLine } from "react-icons/ri";
 import FatihImg from "../../../assets/fatih.png";
 import useLogout from '../../../hooks/useLogout';
+import { useEffect } from "react";
+import useAuth from "../../../hooks/useAuth";
+import useUser from "../../../hooks/useUser";
+import axios from "../../../services/api";
 
-interface HomeNavProps {
-  user: {
-    username: string;
-    roles: { [key: string]: number }; // roles'un tipini de belirledik
-  };
-}
 
-const HomeNav = ({ user }: HomeNavProps) => {
+const HomeNav = () => {
   const logout = useLogout();
+  const { auth } = useAuth();
+  const { user, setUser } = useUser();
+
+  const getUser = async () => {
+    try {
+      const userResponse = await axios.get("/user", {
+        headers: {
+          Authorization: `Bearer ${auth.accessToken}`,
+        },
+      });
+      setUser(userResponse.data.data);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  };
+
+  useEffect(() => {
+    !user.username && getUser();
+  }, []);
+  
   return (
     <div className='flex flex-col '>
       <div className='flex justify-between items-center'>
